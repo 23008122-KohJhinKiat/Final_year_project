@@ -1,0 +1,14 @@
+<nav>
+    <a href="/">Home</a>
+    <a href="/shop">Shop</a>
+    <% if (user?.role === 'employee') { %>
+      <a href="/admin/products">Admin Panel</a>
+    <% } %>
+    <% if (user) { %>
+      <a href="/design">Design Board</a>
+      <a href="/logout">Logout</a>
+    <% } else { %>
+      <a href="/login">Login</a>
+    <% } %>
+  </nav>
+  
