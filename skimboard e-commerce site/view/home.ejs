@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>This Side Up - Home</title></head>
+<body>
+  <h1>Welcome to This Side Up</h1>
+  <p>Custom skimboards & beach essentials</p>
+  <a href="/shop">Shop Now</a> | <a href="/design">Design Your Board</a>
+
+  <h2>Featured Products</h2>
+  <% products.forEach(product => { %>
+    <div>
+      <img src="<%= product.image %>" alt="<%= product.name %>" width="150"/>
+      <h3><%= product.name %></h3>
+      <p>$<%= product.price %></p>
+    </div>
+  <% }) %>
+</body>
+</html>

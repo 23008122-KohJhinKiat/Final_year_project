@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Shop | This Side Up</title></head>
+<body>
+  <h1>Shop All Products</h1>
+  <% products.forEach(product => { %>
+    <div style="width: 30%; display: inline-block; margin: 10px;">
+      <img src="<%= product.image %>" alt="<%= product.name %>" width="200"/>
+      <h3><%= product.name %></h3>
+      <p>$<%= product.price %></p>
+      <button>Add to Cart</button>
+    </div>
+  <% }) %>
+</body>
+</html>
