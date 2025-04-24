@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head><title>This Side Up - Home</title></head>
+<head>
+  <title>This Side Up - Home</title>
+  <link rel="stylesheet" href="/public/styles.css">
+</head>
 <body>
-  <h1>Welcome to This Side Up</h1>
-  <p>Custom skimboards & beach essentials</p>
-  <a href="/shop">Shop Now</a> | <a href="/design">Design Your Board</a>
+  <% include navbar.ejs %>
 
-  <h2>Featured Products</h2>
-  <% products.forEach(product => { %>
-    <div>
-      <img src="<%= product.image %>" alt="<%= product.name %>" width="150"/>
-      <h3><%= product.name %></h3>
-      <p>$<%= product.price %></p>
+  <main>
+    <h1>Welcome to This Side Up</h1>
+    <p>Custom skimboards & beach essentials</p>
+
+    <% if (!user) { %>
+      <a href="/login">Login</a> | <a href="/register">Register</a>
+    <% } %>
+
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <% products.forEach(product => { %>
+        <div class="product-card">
+          <img src="<%= product.image %>" alt="<%= product.name %>" />
+          <h3><%= product.name %></h3>
+          <p>$<%= product.price %></p>
+        </div>
+      <% }) %>
     </div>
-  <% }) %>
+  </main>
 </body>
 </html>
