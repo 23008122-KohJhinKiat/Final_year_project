@@ -2,24 +2,31 @@
 <html>
 <head>
   <title>This Side Up - Home</title>
-  <link rel="stylesheet" href="/public/styles.css">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="navbar" href="/views/navbar.ejs">
 </head>
 <body>
-  <% include navbar.ejs %>
+  <%- include('navbar') %>
 
   <main>
     <h1>Welcome to This Side Up</h1>
     <p>Custom skimboards & beach essentials</p>
 
-    <% if (!user) { %>
-      <a href="/login">Login</a> | <a href="/register">Register</a>
-    <% } %>
+    <div class="button-group">
+      <a href="/shop" class="button">Shop Now</a>
+      <% if (user) { %>
+        <a href="/design" class="button">Design Your Board</a>
+      <% } else { %>
+        <a href="/login" class="button">Login</a>
+        <a href="/register" class="button">Register</a>
+      <% } %>
+    </div>
 
     <h2>Featured Products</h2>
     <div class="product-grid">
       <% products.forEach(product => { %>
         <div class="product-card">
-          <img src="<%= product.image %>" alt="<%= product.name %>" />
+          <img src="<%= product.image %>" alt="<%= product.name %>" width="100%">
           <h3><%= product.name %></h3>
           <p>$<%= product.price %></p>
         </div>

@@ -1,14 +1,18 @@
-<nav>
-    <a href="/">Home</a>
-    <a href="/shop">Shop</a>
+<nav style="background: #0077B6; color: white; padding: 10px;">
+    <strong style="margin-right: 15px;">This Side Up</strong>
+    <a href="/" style="color: white; margin-right: 10px;">Home</a>
+    <a href="/shop" style="color: white; margin-right: 10px;">Shop</a>
+  
     <% if (user?.role === 'employee') { %>
-      <a href="/admin/products">Admin Panel</a>
+      <a href="/admin/products" style="color: white; margin-right: 10px;">Admin Panel</a>
     <% } %>
+  
     <% if (user) { %>
-      <a href="/design">Design Board</a>
-      <a href="/logout">Logout</a>
+      <a href="/design" style="color: white; margin-right: 10px;">Design Board</a>
+      <a href="/logout" style="color: white;">Logout</a>
     <% } else { %>
-      <a href="/login">Login</a>
+      <a href="/login" style="color: white; margin-right: 10px;">Login</a>
+      <a href="/register" style="color: white;">Register</a>
     <% } %>
   </nav>
   
